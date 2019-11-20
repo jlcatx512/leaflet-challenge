@@ -1,7 +1,7 @@
 # leaflet-challenge
 November 17, 2019
 
-<img width=100% src="Leaflet-Step-1\static\images\leaflet-challenge-screenshot-2019-11-19.jpg">
+<img width=100% src="images\leaflet-challenge-screenshot-2019-11-19.jpg">
 
 ## ACTION ITEMS ##
 - [X] ~~Leaflet tutorials~~
@@ -19,7 +19,7 @@ November 17, 2019
 - [ ] See https://wineanalysis.herokuapp.com/ for example.
 
 ## VS CODE Live Server Extension ##
-<img width=100% src="Leaflet-Step-1\static\images\vs_code_live_server_extension_screenshot.png">
+<img width=100% src="images\vs_code_live_server_extension_screenshot.png">
 
 ## Structure 
 * Rewatching the videos help.
