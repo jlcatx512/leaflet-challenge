@@ -1,5 +1,6 @@
 # leaflet-challenge
 November 17, 2019
+* See live website at: https://jlcatx512.github.io/leaflet-challenge/
 
 <img width=100% src="images\leaflet-challenge-screenshot-2019-11-19.jpg">
 
@@ -17,9 +18,6 @@ November 17, 2019
 * Pass the input to URL.
 * Have a default.
 - [ ] See https://wineanalysis.herokuapp.com/ for example.
-
-## VS CODE Live Server Extension ##
-<img width=100% src="images\vs_code_live_server_extension_screenshot.png">
 
 ## Structure 
 * Rewatching the videos help.
@@ -41,7 +39,6 @@ November 17, 2019
 * [GeoJSON Summary Format](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php)
 > GeoJSON is a format for encoding a variety of geographic data structures. A GeoJSON object may represent a geometry, a feature, or a collection of features. GeoJSON uses the JSON standard. The GeoJSONP feed uses the same JSON response, but the GeoJSONP response is wrapped inside the function call, eqfeed_callback. See the GeoJSON site for more information.
 * [Past 30 Days Updated every minute. All Earthquakes](https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson)
-* 
 
 ```
 L.geoJSON(data, {
@@ -52,7 +49,6 @@ L.geoJSON(data, {
     return layer.feature.properties.description;
 }).addTo(map);`
 ``` 
-
 > GeoJSON is a format for encoding a variety of geographic data structures […]. A GeoJSON object may represent a region of space (a Geometry), a spatially bounded entity (a Feature), or a list of Features (a FeatureCollection). GeoJSON supports the following geometry types: Point, LineString, Polygon, MultiPoint, MultiLineString, MultiPolygon, and GeometryCollection. Features in GeoJSON contain a Geometry object and additional properties, and a FeatureCollection contains a list of Features.
 
 ## FLOW ##
@@ -76,8 +72,7 @@ L.geoJSON(data, {
     * e.g 
     `<script type="text/javascript" src="config.js"></script>`
 
-## How to hide? ##
-### Create `.gitignore` ###
+## How to hide local files from Git/GitHub. Create `.gitignore` ###
 * What happens if you load to github.io?
 
 ## GeoJson ##
@@ -120,16 +115,18 @@ mymap.on('click', onMapClick);
 
 ## Map must have defined height ##
 * Can be in CSS.
-* e.g. 100%
+* e.g. `height=100%`
 
 ## Leaflet legend ##
 * [Interactive Choropleth Map](https://leafletjs.com/examples/choropleth/)
 * Helpful with color scale too.
 
-## tool tips ##
+## Tool tips ##
 * https://leafletjs.com/reference-1.6.0.html#map-zoom
 
-## Useful VS Code Extensions ##
+## VS CODE Live Server Extension - USEFUL! ##
+<img width=100% src="images\vs_code_live_server_extension_screenshot.png">
+* Easier to set up than manually setting up a local server through python command.
 > Name: Live Server
 > Id: ritwickdey.liveserver
 > Description: Launch a development local Server with live reload feature for static & dynamic pages

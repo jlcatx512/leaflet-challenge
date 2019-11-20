@@ -1,57 +1,41 @@
 // Jadd Cheng
 // November 17, 2019
 
+// Choose color for earthquake circles.
+// ternary operator
 function circleColor(d) {
     // return d > 5 ? '#800026' :
     return d > 5 ? 'red' :
-            // d > 4  ? '#BD0026' :
             d > 4  ? 'pink' :
-            // d > 3  ? '#E31A1C' :
-            d > 3  ? 'yellow' :
-            // d > 2  ? '#FC4E2A' :
-            d > 2  ? 'orange' :
-            // d > 1   ? '#FD8D3C' :
+            d > 3  ? 'orange' :
+            d > 2  ? 'yellow' :
             d > 1   ? 'lime' :
-                    'green';
-            // d > 0   ? '#FEB24C' :
-            // d > 0   ? '#00ff00' :
-            // d > 0   ? 'green' :
-        // d > 0   ? '#FED976' :
-                    // '#FFEDA0';
-    // return "#ff7800"
+                    'green'; // Else statement.
 }
-// ternary operator
 
-
+// Create geoJSON layer.
 function createEarthquakeFeatures(earthquakeData) {
 
     // Define a function we want to run once for each feature in the features array
     // Give each feature a popup describing the place and time of the earthquake
     function onEachFeature(feature, layer) {
         // console.log(feature)
-        layer.bindPopup("<h3>" + feature.properties.place +
-        "</h3><hr><p>" + new Date(feature.properties.time) + "</p>");
+        layer.bindPopup("<h3>" + "Location: " + feature.properties.place +
+        "</h3><hr><p>" + new Date(feature.properties.time) + "</p>" +
+        "<p>" + "Magnitude: " + feature.properties.mag + "</p>");
     }
 
     // Create a GeoJSON layer containing the features array on the earthquakeData object
     // Run the onEachFeature function once for each piece of data in the array
     // earthquakeData --> data.features
 
-    // create Circle marker function. to put in radius option.
-    function circleSize(feature){
-        magnitude = parseFloat(feature.properties.mag)
-        // console.log(magnitude)
-        return magnitude
-    }
-
     function createCircleMarker(feature, latlng) {
         let geojsonMarkerOptions = {
-            radius: feature.properties.mag*5,
+            radius: parseFloat(feature.properties.mag) * 5, // Normalize size of circles.
             fillColor: circleColor(feature.properties.mag),
             color: "#000",
             weight: 1,
             opacity: 1,
-            // fillOpacity: 0.8
             fillOpacity: 1.2
         }
         return L.circleMarker(latlng, geojsonMarkerOptions);
@@ -75,6 +59,7 @@ function createFaultlineFeatures(faultlinesData) {
     return faultlines
 }
 
+// Create tile layers to add to map - base AND overlay maps.
 function createMap(earthquakes, faultlines) {
 
     // Define satellite, streetmap and darkmap layers
@@ -146,28 +131,7 @@ function createMap(earthquakes, faultlines) {
     legend.addTo(myMap);
 }
 
-// ADD LEGEND
-
-
-// function circleColor(d) {
-//     // return d > 5 ? '#800026' :
-//     return d > 5 ? 'red' :
-//             // d > 4  ? '#BD0026' :
-//             d > 4  ? 'pink' :
-//             // d > 3  ? '#E31A1C' :
-//             d > 3  ? 'yellow' :
-//             // d > 2  ? '#FC4E2A' :
-//             d > 2  ? 'orange' :
-//             // d > 1   ? '#FD8D3C' :
-//             d > 1   ? 'lime' :
-//             // d > 0   ? '#FEB24C' :
-//             // d > 0   ? '#00ff00' :
-//             d > 0   ? 'green' :
-//         // d > 0   ? '#FED976' :
-//                     '#FFEDA0';
-//     // return "#ff7800"
-// }
-
+// Add legend.
 function createLegend (map) {
     const legend = L.control({position: 'bottomright'});
 
@@ -175,7 +139,7 @@ function createLegend (map) {
     var div = L.DomUtil.create('div', 'info legend'),
     // var div = L.DomUtil.create('div', 'legend'),
         grades = [0, 1, 2, 3, 4, 5, 6],
-        labels = ["Hello"];
+        labels = ["Magnitude"];
 
     // loop through our density intervals and generate a label with a colored square for each interval
     for (var i = 0; i < grades.length; i++) {
