@@ -1,6 +1,8 @@
 # leaflet-challenge
 November 17, 2019
 
+<img width=100% src="Leaflet-Step-1\static\images\leaflet-challenge-screenshot-2019-11-19.jpg">
+
 ## ACTION ITEMS ##
 - [X] Leaflet tutorials
 - [X] Go through class activities.
