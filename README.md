@@ -4,19 +4,22 @@ November 17, 2019
 <img width=100% src="Leaflet-Step-1\static\images\leaflet-challenge-screenshot-2019-11-19.jpg">
 
 ## ACTION ITEMS ##
-- [X] Leaflet tutorials
-- [X] Go through class activities.
+- [X] ~~Leaflet tutorials~~
+- [X] ~~Go through class activities.~~
 - [X] https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson
     * Start with a small set first.
 - All Earthquakes past day is good. About 358? occurences.
 - [ ] Add input dropdown menu to select dataset?
-
 - [ ] https://github.com/timwis/leaflet-choropleth/blob/gh-pages/src/choropleth.js
 
 ## Drop-down List ##
 * Take the selected link as the input.
 * Pass the input to URL.
 * Have a default.
+- [ ] See https://wineanalysis.herokuapp.com/ for example.
+
+## VS CODE Live Server Extension ##
+<img width=100% src="Leaflet-Step-1\static\images\vs_code_live_server_extension_screenshot.png">
 
 ## Structure 
 * Rewatching the videos help.
